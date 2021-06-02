@@ -59,8 +59,8 @@ function getSelection(node: any) {
       end: node.selectionEnd,
     };
   } else {
-    const win =
-      (node.ownerDocument && node.ownerDocument.defaultView) || window;
+    // shadow dom の場合は shadow-root に対して getSelection をする必要がある
+    const win = (node.getRootNode && node.getRootNode()) || (node.ownerDocument && node.ownerDocument.defaultView || window);
     const selection = win.getSelection();
     return {
       anchorNode: selection.anchorNode,

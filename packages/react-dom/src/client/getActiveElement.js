@@ -13,6 +13,10 @@ export default function getActiveElement(doc: ?Document): ?Element {
     return null;
   }
   try {
+    // shadow dom の場合は shadowRoot の activeElement を見る必要がある
+    if (doc.activeElement && doc.activeElement.shadowRoot) {
+      return getActiveElement(doc.activeElement.shadowRoot);
+    }
     return doc.activeElement || doc.body;
   } catch (e) {
     return doc.body;
