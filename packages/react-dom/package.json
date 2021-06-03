@@ -1,13 +1,8 @@
 {
-  "name": "react-dom",
+  "name": "@techtouch-inc/react-dom",
   "version": "17.0.3",
   "description": "React package for working with the DOM.",
   "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/facebook/react.git",
-    "directory": "packages/react-dom"
-  },
   "keywords": [
     "react"
   ],
@@ -48,5 +43,13 @@
     "transform": [
       "loose-envify"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/techtouch-inc/react.git",
+    "directory": "packages/react-dom"
   }
 }
